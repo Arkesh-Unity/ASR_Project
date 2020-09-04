@@ -1,0 +1,131 @@
+﻿Build1=Default,b4x.asr.demo
+File1=Activity_main.bal
+File2=blue_background.jpg
+File3=layout.bal
+File4=MainPage.bal
+File5=mic.jpg
+File6=mics.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+Group=Default Group
+Library1=core
+Library2=runtimepermissions
+Library3=soundlibs
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="28"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>~\n~~\n~     <uses-permission android:name="$PACKAGE$.permission.INTERNET" />~\n~    <uses-permission android:name="$PACKAGE$.permission.RECORD_AUDIO" />~\n~    <uses-permission android:name="$PACKAGE$.permission.READ_EXTERNAL_STORAGE" />~\n~    <uses-permission android:name="$PACKAGE$.permission.ACCESS_NETWORK_STATE" />~\n~    <uses-permission android:name="$PACKAGE$.permission.ACCESS_WIFI_STATE" />~\n~    <uses-permission android:name="$PACKAGE$.permission.WRITE_EXTERNAL_STORAGE" />)~\n~	~\n~~\n~	AddApplicationText(~\n~	 <provider~\n~            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"~\n~            android:authorities="$PACKAGE$.AGCInitializeProvider"~\n~            android:exported="false" />~\n~~\n~        <service~\n~            android:name="com.huawei.agconnect.core.ServiceDiscovery"~\n~            android:exported="false" />~\n~			~\n~			<meta-data~\n~            android:name="com.huawei.hms.client.service.name:ml-computer-ha-inner"~\n~            android:value="ml-computer-ha-inner:2.0.1.300" />~\n~			~\n~			<meta-data~\n~            android:name="com.huawei.hms.client.service.name:ml-computer-net"~\n~            android:value="ml-computer-net:2.0.1.300" />~\n~~\n~        <uses-library~\n~            android:name="org.apache.http.legacy"~\n~            android:required="false" />~\n~			~\n~			 <meta-data~\n~            android:name="com.huawei.hms.client.service.name:ml-computer-vision"~\n~            android:value="ml-computer-vision:2.0.1.300" />~\n~			~\n~			<meta-data~\n~            android:name="com.huawei.hms.client.service.name:ml-computer-vision-inner"~\n~            android:value="ml-computer-vision-inner:2.0.1.300" />~\n~			~\n~			<meta-data~\n~            android:name="com.huawei.hms:ml-computer-voice-asr-sdk"~\n~            android:value="ml-computer-voice-asr-sdk:2.0.1.300" />~\n~			~\n~			 <activity~\n~            android:name="com.huawei.hms.mlplugin.asr.MLAsrCaptureActivity"~\n~            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"~\n~            android:exported="false"~\n~            android:theme="@style/mlkitAsrCaptureActivityTheme" >~\n~~\n~            <!-- <intent-filter> -->~\n~            <!-- <action android:name="com.huawei.hms.mlplugin.asr" /> -->~\n~            <!-- <category android:name="android.intent.category.DEFAULT"/> -->~\n~            <!-- </intent-filter> -->~\n~        </activity>~\n~~\n~        <meta-data~\n~            android:name="com.huawei.hms:ml-computer-voice-asr-plugin"~\n~            android:value="ml-computer-voice-asr-plugin:2.0.1.300" />~\n~			~\n~			~\n~			)~\n~SetApplicationAttribute(android:name, "b4x.asr.demo.MainApplication")~\n~SetApplicationAttribute(android:networkSecurityConfig, "@xml/network_security_config")~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
+Module1=Starter
+NumberOfFiles=6
+NumberOfLibraries=3
+NumberOfModules=1
+Version=9.9
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A ASR
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+	
+	#AdditionalJar:agconnect-core-1.0.1.300.aar
+	#AdditionalJar:tasks-1.3.1.302.aar
+	#AdditionalJar:network-common-4.0.2.300.aar
+	#AdditionalJar:network-grs-4.0.2.300.aar
+	#AdditionalJar:okhttp-3.12.0.jar
+	#AdditionalJar:okio-1.15.0.jar
+	#AdditionalJar:ml-computer-agc-inner-2.0.1.300.aar
+	#AdditionalJar:ml-computer-cloud-base-inner-2.0.1.300.aar
+	#AdditionalJar:ml-computer-commonutils-inner-2.0.1.300.aar
+	#AdditionalJar:ml-computer-ha-inner-2.0.1.300.aar
+	#AdditionalJar:ml-computer-grs-inner-2.0.1.300.aar
+	#AdditionalJar:ml-computer-net-2.0.1.300.aar
+	#AdditionalJar:ml-computer-voice-asr-plugin-2.0.1.300.aar
+	#AdditionalJar:ml-computer-voice-asr-2.0.1.300.aar
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+    Dim ASR As Asr
+	Private rp As RuntimePermissions
+	
+	Private ImageView1 As ImageView
+	
+
+	Dim sep1,sep2 As Int
+	Private ImageView2 As ImageView
+	Private Label1 As Label
+	Dim parts() As String
+	Private text_speach As String
+	Dim part() As String
+	Private Label2 As Label
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Do not forget to load the layout file created with the visual designer. For example:
+	'Activity.LoadLayout("Layout1")
+	Activity.LoadLayout("layout")
+
+	rp.CheckAndRequest(rp.PERMISSION_RECORD_AUDIO)
+	rp.CheckAndRequest(rp.PERMISSION_READ_EXTERNAL_STORAGE)
+	rp.CheckAndRequest(rp.PERMISSION_WRITE_EXTERNAL_STORAGE)
+	ASR.initAsr
+End Sub
+
+	
+Sub Activity_Resume
+
+	ImageView2.Bitmap=LoadBitmap(File.DirAssets,"mic_mute_icon.png")
+ 
+End Sub
+Sub Activity_PermissionResult (Permission As String, Result As Boolean)
+	Log($"Activity_PermissionResult(${Permission},${Result})"$)
+End Sub
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub Listener_AsrText (text As String)
+	Log(text)
+
+	parts = Regex.Split("=", text)
+	text_speach = parts(1)
+	
+	part =  Regex.Split("\}",text_speach)
+	If part(0) = "" Then
+		
+		Else
+	Label1.Text = part(0)
+	ToastMessageShow(part(0), True)
+		
+		ImageView2.Bitmap=LoadBitmap(File.DirAssets,"mic_mute_icon.png")
+		
+		Label2.Text = "Please tap on mic icon to speak"
+		
+	End If
+	
+End Sub
+
+Sub ImageView2_Click
+	
+	ImageView2.Bitmap=LoadBitmap(File.DirAssets,"mic_icon.png")
+	
+	Label2.Text = ""
+	
+	ASR.ListenForAsr
+	
+End Sub

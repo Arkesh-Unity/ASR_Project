@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="b4x.asr.demo"
+	android:versionCode="1"
+	android:versionName=""
+	android:installLocation="internalOnly">
+	
+	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="28"/>
+	<supports-screens android:largeScreens="true" 
+	    android:normalScreens="true" 
+	    android:smallScreens="true" 
+	    android:anyDensity="true"/>
+	
+	     <uses-permission android:name="b4x.asr.demo.permission.INTERNET" />
+	    <uses-permission android:name="b4x.asr.demo.permission.RECORD_AUDIO" />
+	    <uses-permission android:name="b4x.asr.demo.permission.READ_EXTERNAL_STORAGE" />
+	    <uses-permission android:name="b4x.asr.demo.permission.ACCESS_NETWORK_STATE" />
+	    <uses-permission android:name="b4x.asr.demo.permission.ACCESS_WIFI_STATE" />
+	    <uses-permission android:name="b4x.asr.demo.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<application
+		android:name="b4x.asr.demo.MainApplication"
+		android:networkSecurityConfig="@xml/network_security_config"
+		android:icon="@drawable/icon"
+		android:label="B4A ASR"
+		android:theme="@style/DarkTheme">
+		
+		<provider
+		            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
+		            android:authorities="b4x.asr.demo.AGCInitializeProvider"
+		            android:exported="false" />
+		
+		        <service
+		            android:name="com.huawei.agconnect.core.ServiceDiscovery"
+		            android:exported="false" />
+					
+					<meta-data
+		            android:name="com.huawei.hms.client.service.name:ml-computer-ha-inner"
+		            android:value="ml-computer-ha-inner:2.0.1.300" />
+					
+					<meta-data
+		            android:name="com.huawei.hms.client.service.name:ml-computer-net"
+		            android:value="ml-computer-net:2.0.1.300" />
+		
+		        <uses-library
+		            android:name="org.apache.http.legacy"
+		            android:required="false" />
+					
+					 <meta-data
+		            android:name="com.huawei.hms.client.service.name:ml-computer-vision"
+		            android:value="ml-computer-vision:2.0.1.300" />
+					
+					<meta-data
+		            android:name="com.huawei.hms.client.service.name:ml-computer-vision-inner"
+		            android:value="ml-computer-vision-inner:2.0.1.300" />
+					
+					<meta-data
+		            android:name="com.huawei.hms:ml-computer-voice-asr-sdk"
+		            android:value="ml-computer-voice-asr-sdk:2.0.1.300" />
+					
+					 <activity
+		            android:name="com.huawei.hms.mlplugin.asr.MLAsrCaptureActivity"
+		            android:configChanges="screenSize|smallestScreenSize|screenLayout|keyboardHidden|orientation"
+		            android:exported="false"
+		            android:theme="@style/mlkitAsrCaptureActivityTheme" >
+		
+		            <!-- <intent-filter> -->
+		            <!-- <action android:name="com.huawei.hms.mlplugin.asr" /> -->
+		            <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+		            <!-- </intent-filter> -->
+		        </activity>
+		
+		        <meta-data
+		            android:name="com.huawei.hms:ml-computer-voice-asr-plugin"
+		            android:value="ml-computer-voice-asr-plugin:2.0.1.300" />
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".main"
+			android:label="B4A ASR"
+			android:screenOrientation="unspecified">
+			<intent-filter>
+			   <action android:name="android.intent.action.MAIN" />
+			   <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			
+		</activity>
+		<service android:name=".starter">
+		</service>
+		<receiver android:name=".starter$starter_BR">
+		</receiver>
+	</application>
+</manifest>
